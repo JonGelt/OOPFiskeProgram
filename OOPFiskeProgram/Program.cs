@@ -1,0 +1,4 @@
+﻿new OOPFiskeProgram.GUI();
+
+
+
