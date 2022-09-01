@@ -8,8 +8,7 @@ namespace OOPFiskeProgram
 {
     internal class GUI
     {
-        DTO dto = new DTO();
-        SaltvandsFisk kødædeneSaltvandsFisk = new SaltvandsFisk();
+        DTO dto = new DTO();              
         Logik logik = new Logik();
 
         public GUI()
@@ -56,7 +55,7 @@ namespace OOPFiskeProgram
                     break;
                 case ConsoleKey.NumPad2:
                 case ConsoleKey.D2:
-                    //SaltvandMenu();
+                    PlanteÆdeneSaltvandsFisk();
                     break;
                 default:
                     break;
@@ -89,9 +88,9 @@ namespace OOPFiskeProgram
       
         private void TilføjKødÆdeneSaltvandsFisk()
         {
-         
-            
-         
+
+            SaltvandsFisk kødædeneSaltvandsFisk = new SaltvandsFisk();
+
             kødædeneSaltvandsFisk.Navn = logik.HentNavn("Navn: ");
             kødædeneSaltvandsFisk.Art = logik.HentArt("Art: ");
             kødædeneSaltvandsFisk.Farve = logik.HentFarve("Farve: ");
@@ -107,18 +106,79 @@ namespace OOPFiskeProgram
         private void VisKødÆdeneSaltvandsFiskList()
         {
 
-            foreach (SaltvandsFisk saltvandsFisk in dto.KødÆdeneSaltvandsFiskList) 
+            foreach (SaltvandsFisk kødædeneSaltvandsFisk in dto.KødÆdeneSaltvandsFiskList) 
             {
-                VisKødÆdeneSaltvandsFisk(saltvandsFisk);
+                VisKødÆdeneSaltvandsFisk(kødædeneSaltvandsFisk);
 
             }
 
-            
+
         }
 
         private void VisKødÆdeneSaltvandsFisk(SaltvandsFisk saltvandsFisk)
         {
-            Console.Clear();
+            
+
+            Console.WriteLine($"Navn: {saltvandsFisk.Navn}\nArt: {saltvandsFisk.Art}\nFarve: {saltvandsFisk.Farve}\nLængde: {saltvandsFisk.Længde}\nVægt: {saltvandsFisk.Vægt}  ");
+
+        }
+
+        private void PlanteÆdeneSaltvandsFisk()
+        {
+
+            Console.WriteLine("FISK DATABASE\n\n1. Se Planteædene Saltvands Fisk liste\n\n2. tilføj Planteædene Saltvands Fisk til liste");
+
+            switch (Console.ReadKey(true).Key)
+            {
+                case ConsoleKey.NumPad1:
+                case ConsoleKey.D1:
+                    VisPlanteÆdeneSaltvandsFiskList();
+                    break;
+                case ConsoleKey.NumPad2:
+                case ConsoleKey.D2:
+                    TilføjPlanteÆdeneSaltvandsFisk();
+                    break;
+                default:
+                    break;
+            }
+
+
+
+        }
+
+
+        private void TilføjPlanteÆdeneSaltvandsFisk()
+        {
+
+            SaltvandsFisk planteædeneSaltvandsFisk = new SaltvandsFisk();
+
+            planteædeneSaltvandsFisk.Navn = logik.HentNavn("Navn: ");
+            planteædeneSaltvandsFisk.Art = logik.HentArt("Art: ");
+            planteædeneSaltvandsFisk.Farve = logik.HentFarve("Farve: ");
+            planteædeneSaltvandsFisk.Længde = logik.HentLængde("Længde: ");
+            planteædeneSaltvandsFisk.Vægt = logik.HentVægt("Vægt: ");
+            VisPlanteÆdeneSaltvandsFisk(planteædeneSaltvandsFisk);
+
+            Console.WriteLine("\nTilføj til liste? (Y/N)");
+            if (Console.ReadKey().Key == ConsoleKey.Y) dto.PlanteÆdeneSaltvandsFiskList.Add(planteædeneSaltvandsFisk);
+
+        }
+
+        private void VisPlanteÆdeneSaltvandsFiskList()
+        {
+
+            foreach (SaltvandsFisk saltvandsFisk in dto.PlanteÆdeneSaltvandsFiskList)
+            {
+                VisPlanteÆdeneSaltvandsFisk(saltvandsFisk);
+
+            }
+
+
+        }
+
+        private void VisPlanteÆdeneSaltvandsFisk(SaltvandsFisk saltvandsFisk)
+        {
+            
 
             Console.WriteLine($"Navn: {saltvandsFisk.Navn}\nArt: {saltvandsFisk.Art}\nFarve: {saltvandsFisk.Farve}\nLængde: {saltvandsFisk.Længde}\nVægt: {saltvandsFisk.Vægt}  ");
 
@@ -133,11 +193,11 @@ namespace OOPFiskeProgram
             {
                 case ConsoleKey.NumPad1:
                 case ConsoleKey.D1:
-                    //FerskvandMenu();
+                    
                     break;
                 case ConsoleKey.NumPad2:
                 case ConsoleKey.D2:
-                    //SaltvandMenu();
+                   
                     break;
                 default:
                     break;
