@@ -8,13 +8,13 @@ namespace OOPFiskeProgram
 {
     internal class DTO
     {
-        public List<Fisk>? KødÆdeneSaltvandsFiskList { get; set; } = new List<Fisk>();
+        public List<SaltvandsFisk>? KødÆdeneSaltvandsFiskList { get; set; } = new List<SaltvandsFisk>();
 
-        public List<Fisk>? PlanteÆdeneSaltvandsFiskList { get; set; } = new List<Fisk>();
+        public List<SaltvandsFisk>? PlanteÆdeneSaltvandsFiskList { get; set; } = new List<SaltvandsFisk>();
 
-        public List<Fisk>? KødÆdeneFerskvandsFiskList { get; set; } = new List<Fisk>();
+        public List<FersksvandFisk>? KødÆdeneFerskvandsFiskList { get; set; } = new List<FersksvandFisk>();
 
-        public List<Fisk>? PlanteÆdeneFerskvandsFiskList { get; set; } = new List<Fisk>();
+        public List<FersksvandFisk>? PlanteÆdeneFerskvandsFiskList { get; set; } = new List<FersksvandFisk>();
 
 
     }

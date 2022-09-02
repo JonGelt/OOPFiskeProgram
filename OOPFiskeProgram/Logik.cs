@@ -13,36 +13,65 @@ namespace OOPFiskeProgram
 
         public double HentVægt(string type)
         {
-            Console.Write($"{type}");
-            string input = Console.ReadLine();
-            return double.Parse(input);
+            double value;
+            do
+            {
+                Console.Write($"{type}");
+              
+
+            }while (!double.TryParse(Console.ReadLine(), out value));
+          
+
+            return value;
         }
 
         public double HentLængde(string type)
         {
-            Console.Write($"{type}");
-            string input = Console.ReadLine();
-            return double.Parse(input);
+            double value;
+            do
+            {
+                Console.Write($"{type}");
+                
+
+            } while (!double.TryParse(Console.ReadLine(), out value));
+
+
+            return value;
         }
 
         public string HentFarve(string type)
         {
-            Console.Write($"{type}");
-            string input = Console.ReadLine();
+            string? input;
+            do
+            {
+                Console.Write(type);
+                input = Console.ReadLine();
+            }
+            while (input == null || input == "" || input.All(char.IsDigit) || input.StartsWith(" "));
             return input;
         }
 
         public string HentArt(string type)
         {
-            Console.Write($"{type}");
-            string input = Console.ReadLine();
+            string? input;
+            do
+            {
+                Console.Write(type);
+                input = Console.ReadLine();
+            }
+            while (input == null || input == "" || input.All(char.IsDigit) || input.StartsWith(" "));
             return input;
         }
 
         public string HentNavn(string type)
         {
-            Console.Write($"{type}");
-            string input = Console.ReadLine();
+            string? input;
+            do
+            {
+                Console.Write(type);
+                input = Console.ReadLine();
+            }
+            while (input == null || input == "" || input.All(char.IsDigit) || input.StartsWith(" "));
             return input;
 
         }

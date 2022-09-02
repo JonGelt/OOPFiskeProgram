@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPFiskeProgram
 {
-    internal class Fisk
+    internal abstract class Fisk
     {
         public string? Navn { get; set; }
 
